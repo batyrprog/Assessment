@@ -16,7 +16,7 @@ struct ResponseModel: Codable {
     let items: [Item]?
 }
 
-struct Item: Codable {
+struct Item: Codable, Hashable {
     let title: String?
     let link: String?
     let media: Media?
@@ -32,8 +32,29 @@ struct Item: Codable {
         case authorID = "author_id"
         case tags
     }
+    
+    func getTitle() -> String {
+        return title ?? ""
+    }
+    
+    func getImageUrl() -> String {
+        return media?.m ?? ""
+    }
+    
+    func getDescription() -> String {
+        return description ?? ""
+    }
+    
+    func getAuthor() -> String {
+        return author ?? ""
+    }
+    
+    func getFormattedPublishedDate() -> String {
+        let date = published ?? ""
+        return formatDate(date: date)
+    }
 }
 
-struct Media: Codable {
+struct Media: Codable, Hashable {
     let m: String?
 }

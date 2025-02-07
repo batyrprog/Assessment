@@ -18,7 +18,17 @@ struct ContentView: View {
         NavigationStack {
             VStack {
                 ScrollView {
-                    GridView(viewModel: viewModel)
+                    if let error = viewModel.error {
+                        ContentUnavailableView("Error, no images",
+                                               systemImage: "photo.on.rectangle.angled")
+                    } else {
+                        if viewModel.isLoading {
+                            ProgressView()
+                                .imageScale(.large)
+                        } else {
+                            GridView(viewModel: viewModel)
+                        }
+                    }
                 }
             }
             .searchable(text: $searchText)

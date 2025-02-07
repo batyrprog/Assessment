@@ -17,17 +17,35 @@ struct GridView: View {
         .init(.flexible(), spacing: 1)
     ]
     
-    var imageDimension: CGFloat = (UIScreen.main.bounds.width / 3) - 1
-    
     var body: some View {
         LazyVGrid(columns: gridItems, spacing: 1) {
-            ForEach(viewModel.imageUrls, id: \.self) { url in
+            ForEach(viewModel.imageItems, id: \.self) { item in
+                NavigationLink {
+                    ImageDetailsView(imageItem: item)
+                } label: {
+                    GridCell(url: item.getImageUrl())
+                }
+            }
+        }
+    }
+}
+
+struct GridCell: View {
+    let dimension: CGFloat = (UIScreen.main.bounds.width / 3) - 1
+    var url: String
+    
+    var body: some View {
+        Group {
+            if !url.isEmpty {
                 KFImage(URL(string: url))
                     .resizable()
                     .scaledToFill()
-                    .frame(width: imageDimension, height: imageDimension)
-                    .clipped()
+                    
+            } else {
+                Color.gray
             }
         }
+        .frame(width: dimension, height: dimension)
+        .clipped()
     }
 }

@@ -12,10 +12,11 @@ import Combine
 @Observable
 class ViewModel: ObservableObject {
     var searchText: String = ""
-    var imageUrls: [String] = []
+    var imageItems: [Item] = []
     var error: Error? = nil
     
     var didFetchImages: Bool = false
+    var isLoading: Bool = false
     
     init() {
     }
@@ -31,10 +32,11 @@ class ViewModel: ObservableObject {
             return
         }
         
+        isLoading = true
+        defer { isLoading = false }
         do {
             let response = try await NetworkService.shared.fetchData(searchText)
-            let items = response.items ?? []
-            imageUrls = items.map { $0.media?.m ?? ""}
+            imageItems = response.items ?? []
             
             didFetchImages = true
             

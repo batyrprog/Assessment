@@ -26,7 +26,6 @@ struct ImageDetailsView: View {
                     horizontalView
                 }
             }
-            .padding()
             .navigationTitle("Image Details")
             .navigationBarTitleDisplayMode(.inline)
             .frame(width: UIScreen.main.bounds.width)
@@ -35,12 +34,36 @@ struct ImageDetailsView: View {
     
     var verticalView: some View {
         VStack(alignment: .leading, spacing: 16) {
-            KFImage(URL(string: imageItem.getImageUrl()))
-                .resizable()
-                .scaledToFill()
-                .frame(width: width, height: width)
-                .clipped()
+            imageView
             
+            detailsView
+            
+            Spacer()
+        }
+        .padding()
+    }
+    
+    var horizontalView: some View {
+        HStack(alignment: .top) {
+            imageView
+            
+            detailsView
+            
+            Spacer()
+        }
+        .padding()
+    }
+    
+    var imageView: some View {
+        KFImage(URL(string: imageItem.getImageUrl()))
+            .resizable()
+            .scaledToFill()
+            .frame(width: width, height: width)
+            .clipped()
+    }
+    
+    var detailsView: some View {
+        VStack(alignment: .leading, spacing: 16) {
             Text(imageItem.getTitle())
                 .font(.headline)
             
@@ -51,30 +74,13 @@ struct ImageDetailsView: View {
             }
             .font(.subheadline)
             
-            Spacer()
-        }
-    }
-    
-    var horizontalView: some View {
-        HStack(alignment: .top) {
-            KFImage(URL(string: imageItem.getImageUrl()))
-                .resizable()
-                .scaledToFill()
-                .frame(width: width, height: width)
-                .clipped()
-            
-            VStack(alignment: .leading, spacing: 16) {
-                Text(imageItem.getTitle())
-                    .font(.headline)
-                
-                VStack(alignment: .leading, spacing: 16) {
-                    Text(attributedString(imageItem.getDescription()) ?? "")
-                    Text(imageItem.getAuthor())
-                    Text(imageItem.getFormattedPublishedDate())
+            if let url = URL(string: imageItem.getImageUrl()) {
+                ShareLink(item: url,
+                          subject: Text(imageItem.getTitle()),
+                          message: Text(imageItem.getDescription())) {
+                    
+                    Label("Share", systemImage: "square.and.arrow.up")
                 }
-                .font(.subheadline)
-                
-                Spacer()
             }
             
             Spacer()

@@ -10,14 +10,30 @@
 		BB89ADD12D566FEE00037236 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB89ADD02D566FEE00037236 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB89AE012D56942300037236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB89ADA82D566D9A00037236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB89ADAF2D566D9A00037236;
+			remoteInfo = Assessment;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BB89ADB02D566D9A00037236 /* Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB89ADFD2D56942300037236 /* AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssessmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BB89ADB22D566D9A00037236 /* Assessment */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Assessment;
+			sourceTree = "<group>";
+		};
+		BB89ADFE2D56942300037236 /* AssessmentTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AssessmentTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -31,6 +47,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB89ADFA2D56942200037236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -38,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				BB89ADB22D566D9A00037236 /* Assessment */,
+				BB89ADFE2D56942300037236 /* AssessmentTests */,
 				BB89ADB12D566D9A00037236 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				BB89ADB02D566D9A00037236 /* Assessment.app */,
+				BB89ADFD2D56942300037236 /* AssessmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +101,29 @@
 			productReference = BB89ADB02D566D9A00037236 /* Assessment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BB89ADFC2D56942200037236 /* AssessmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB89AE032D56942300037236 /* Build configuration list for PBXNativeTarget "AssessmentTests" */;
+			buildPhases = (
+				BB89ADF92D56942200037236 /* Sources */,
+				BB89ADFA2D56942200037236 /* Frameworks */,
+				BB89ADFB2D56942200037236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB89AE022D56942300037236 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BB89ADFE2D56942300037236 /* AssessmentTests */,
+			);
+			name = AssessmentTests;
+			packageProductDependencies = (
+			);
+			productName = AssessmentTests;
+			productReference = BB89ADFD2D56942300037236 /* AssessmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -88,6 +136,10 @@
 				TargetAttributes = {
 					BB89ADAF2D566D9A00037236 = {
 						CreatedOnToolsVersion = 16.1;
+					};
+					BB89ADFC2D56942200037236 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = BB89ADAF2D566D9A00037236;
 					};
 				};
 			};
@@ -109,12 +161,20 @@
 			projectRoot = "";
 			targets = (
 				BB89ADAF2D566D9A00037236 /* Assessment */,
+				BB89ADFC2D56942200037236 /* AssessmentTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BB89ADAE2D566D9A00037236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB89ADFB2D56942200037236 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,7 +191,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB89ADF92D56942200037236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB89AE022D56942300037236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB89ADAF2D566D9A00037236 /* Assessment */;
+			targetProxy = BB89AE012D56942300037236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BB89ADBC2D566D9C00037236 /* Debug */ = {
@@ -269,6 +344,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,6 +374,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +385,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB89AE042D56942300037236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8JMM4RM96A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.indeks.AssessmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Assessment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Assessment";
+			};
+			name = Debug;
+		};
+		BB89AE052D56942300037236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8JMM4RM96A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.indeks.AssessmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Assessment.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Assessment";
 			};
 			name = Release;
 		};
@@ -328,6 +441,15 @@
 			buildConfigurations = (
 				BB89ADBF2D566D9C00037236 /* Debug */,
 				BB89ADC02D566D9C00037236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB89AE032D56942300037236 /* Build configuration list for PBXNativeTarget "AssessmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB89AE042D56942300037236 /* Debug */,
+				BB89AE052D56942300037236 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

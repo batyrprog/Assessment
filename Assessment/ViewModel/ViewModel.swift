@@ -23,12 +23,10 @@ class ViewModel: ObservableObject {
     
     func fetchImages(_ searchText: String) async {
         guard !searchText.isEmpty else {
-            print("Eeror searchText")
             return
         }
         
         guard didFetchImages == false else {
-            print("Eeror didFetchImages")
             return
         }
         
@@ -62,23 +60,19 @@ class NetworkService {
         let urlString = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=\(searchText)"
         
         guard let url = URL(string: urlString) else {
-            print("Error fetching data:")
             throw BError.invalidURL
         }
         
         let (data, urlResponse) = try await URLSession.shared.data(from: url)
         
         guard let urlRespons = urlResponse as? HTTPURLResponse, (200...299).contains(urlRespons.statusCode) else {
-            print("Eeror urlRespons")
             throw BError.invalidResponse
         }
         
         do {
             let response = try JSONDecoder().decode(ResponseModel.self, from: data)
-            print("response", response)
             return response
         } catch {
-            print("Error fetchData", error.localizedDescription)
             throw BError.invalidData
         }
     }

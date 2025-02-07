@@ -6,8 +6,30 @@
 	<dict>
 		<key>Assessment.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>AssessmentTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>BB89ADAF2D566D9A00037236</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB89ADEA2D568D7000037236</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

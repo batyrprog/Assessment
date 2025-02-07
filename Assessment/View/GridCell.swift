@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct GridCell: View {
-    let dimension: CGFloat = (UIScreen.main.bounds.width / 3) - 1
     var url: String
     
     var body: some View {
@@ -23,8 +22,5 @@ struct GridCell: View {
                 Color.gray
             }
         }
-        .frame(width: dimension, height: dimension)
-        .clipShape(Rectangle())
-        .clipped()
     }
 }

@@ -9,17 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var viewModel = ViewModel()
     @State private var searchText: String = ""
+    
+    @State private var pendingRequestWorkItem: DispatchWorkItem?
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Hello")
+                ScrollView {
+                    GridView(viewModel: viewModel)
+                }
             }
             .searchable(text: $searchText)
             .navigationTitle("Flickr Search")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onChange(of: searchText) { _, newValue in
+            waitAndSeach(newValue)
+        }
+        .onAppear() {
+            fetchData(searchText)
+        }
+    }
+    
+    private func fetchData(_ searchText: String) {
+        Task {
+            await viewModel.fetchImages(searchText)
+        }
+    }
+    
+    private func waitAndSeach(_ newValue: String) {
+        viewModel.didFetchImages = false
+        
+        pendingRequestWorkItem?.cancel()
+        
+        let requestWorkItem = DispatchWorkItem {
+            fetchData(newValue)
+        }
+        
+        pendingRequestWorkItem = requestWorkItem
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: requestWorkItem)
     }
 }
 

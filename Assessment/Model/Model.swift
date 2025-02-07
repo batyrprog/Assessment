@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct ResponseModel: Codable {
-    let title: String
-    let link: String
-    let description: String
-    let modified: Date
-    let generator: String
-    let items: [Item]
+    let title: String?
+    let link: String?
+    let description: String?
+    let modified: String?
+    let generator: String?
+    let items: [Item]?
 }
 
 struct Item: Codable {
-    let title: String
-    let link: String
-    let media: Media
-    let dateTaken: Date
-    let description: String
-    let published: Date
-    let author, authorID, tags: String
+    let title: String?
+    let link: String?
+    let media: Media?
+    let dateTaken: String?
+    let description: String?
+    let published: String?
+    let author, authorID, tags: String?
 
     enum CodingKeys: String, CodingKey {
         case title, link, media
@@ -35,5 +35,5 @@ struct Item: Codable {
 }
 
 struct Media: Codable {
-    let m: String
+    let m: String?
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftSoup
 
 func formatDate(date: String) -> String {
     let isoFormatter = ISO8601DateFormatter()
@@ -17,20 +18,25 @@ func formatDate(date: String) -> String {
     return formatter.string(from: date)
 }
 
-func attributedString(_ html: String) -> AttributedString? {
-    guard let data = html.data(using: .utf8) else { return nil }
-    
+func extractText(_ html: String) -> String {
     do {
-        let nsAttributedString = try NSMutableAttributedString(
-            data: data,
-            options: [
-                .documentType: NSAttributedString.DocumentType.html,
-                .characterEncoding: String.Encoding.utf8.rawValue
-            ],
-            documentAttributes: nil)
-        
-        return AttributedString(nsAttributedString)
+        let document = try SwiftSoup.parse(html)
+        return try document.text()
     } catch {
-        return nil
+        print("Error parsing HTML: \(error)")
+        return ""
+    }
+}
+
+func getDimensions(_ html: String) -> (width: String, height: String) {
+    do {
+        let document = try SwiftSoup.parse(html)
+        let element = try document.select("img").first()
+        let width = try String(element?.attr("width") ?? "")
+        let height = try String(element?.attr("height") ?? "")
+        
+        return (width, height)
+    } catch {
+        return ("0","0")
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1FAAFC2D56DEAB000A189B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FAAFB2D56DEAB000A189B /* SwiftSoup */; };
 		BB89ADD12D566FEE00037236 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB89ADD02D566FEE00037236 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB89ADD12D566FEE00037236 /* Kingfisher in Frameworks */,
+				BB1FAAFC2D56DEAB000A189B /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,11 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB1FAAFA2D56DEAB000A189B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB89ADA72D566D9A00037236 = {
 			isa = PBXGroup;
 			children = (
 				BB89ADB22D566D9A00037236 /* Assessment */,
 				BB89ADFE2D56942300037236 /* AssessmentTests */,
+				BB1FAAFA2D56DEAB000A189B /* Frameworks */,
 				BB89ADB12D566D9A00037236 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +106,7 @@
 			name = Assessment;
 			packageProductDependencies = (
 				BB89ADD02D566FEE00037236 /* Kingfisher */,
+				BB1FAAFB2D56DEAB000A189B /* SwiftSoup */,
 			);
 			productName = Assessment;
 			productReference = BB89ADB02D566D9A00037236 /* Assessment.app */;
@@ -154,6 +165,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				BB89ADCF2D566FEE00037236 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BBC15F6A2D56DD1C00644EDC /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BB89ADB12D566D9A00037236 /* Products */;
@@ -465,9 +477,22 @@
 				minimumVersion = 8.2.0;
 			};
 		};
+		BBC15F6A2D56DD1C00644EDC /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.7;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB1FAAFB2D56DEAB000A189B /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC15F6A2D56DD1C00644EDC /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		BB89ADD02D566FEE00037236 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB89ADCF2D566FEE00037236 /* XCRemoteSwiftPackageReference "Kingfisher" */;

@@ -10,6 +10,7 @@ import Kingfisher
 
 struct ImageDetailsView: View {
     @EnvironmentObject var contentViewModel: ContentViewModel
+    @Environment(\.dismiss) var dismiss
     
     var imageItem: Item
     
@@ -28,7 +29,21 @@ struct ImageDetailsView: View {
             }
             .navigationTitle("Image Details")
             .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .frame(width: UIScreen.main.bounds.width)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        withAnimation(.spring()) {
+                            dismiss()
+                        }
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .font(.title2)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
         }
     }
     
@@ -68,9 +83,13 @@ struct ImageDetailsView: View {
                 .font(.headline)
             
             VStack(alignment: .leading, spacing: 16) {
-                Text(attributedString(imageItem.getDescription()) ?? "")
+                Text(extractText(imageItem.getDescription()))
                 Text(imageItem.getAuthor())
                 Text(imageItem.getFormattedPublishedDate())
+                
+                let dimensions = getDimensions(imageItem.getDescription())
+                Text("Width: " + dimensions.width)
+                Text("Height: " + dimensions.height)
             }
             .font(.subheadline)
             

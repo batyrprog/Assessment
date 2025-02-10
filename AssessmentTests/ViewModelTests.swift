@@ -10,20 +10,40 @@ import XCTest
 @testable import Assessment
 
 final class ViewModelTests: XCTestCase {
+    
+    var sut: ViewModel!
+    
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        
+        sut = ViewModel()
+    }
+ 
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+        
+        sut = nil
+    }
 
     func test_viewModel_init() {
-        let viewModel = ViewModel()
 
-        XCTAssertNotNil(viewModel)
+        XCTAssertNotNil(sut)
     }
 
     func test_viewModel_FetchImages_Success() async throws {
 
-        let viewModel = ViewModel()
+        await sut.fetchImages("test")
 
-        await viewModel.fetchImages("test")
-
-        XCTAssertTrue(viewModel.didFetchImages)
-        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertTrue(sut.didFetchImages)
+        XCTAssertFalse(sut.isLoading)
+    }
+    
+    func test_viewModel_FetchImages_Failure() async throws {
+        
+        await sut.fetchImages("")
+        
+        XCTAssertTrue(sut.didFetchImages)
+        XCTAssertFalse(sut.isLoading)
+        XCTAssertFalse(sut.imageItems.isEmpty)
     }
 }

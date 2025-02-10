@@ -13,8 +13,8 @@ struct GridCell: View {
     
     var body: some View {
         Group {
-            if !url.isEmpty {
-                KFImage(URL(string: url))
+            if !url.isEmpty, let originalURL = URL(string: url) {
+                KFImage(originalURL)
                     .resizable()
                     .scaledToFill()
                     

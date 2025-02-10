@@ -85,6 +85,7 @@ struct ImageDetailsView: View {
             VStack(alignment: .leading, spacing: 16) {
                 Text(extractText(imageItem.getDescription()))
                 Text(imageItem.getAuthor())
+                    .accessibilityLabel("authorLabel")
                 Text(imageItem.getFormattedPublishedDate())
                 
                 let dimensions = getDimensions(imageItem.getDescription())

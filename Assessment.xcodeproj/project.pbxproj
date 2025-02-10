@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		BB1FAAFC2D56DEAB000A189B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FAAFB2D56DEAB000A189B /* SwiftSoup */; };
+		BB1FAB1C2D583B5C000A189B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FAB1B2D583B5C000A189B /* Kingfisher */; };
+		BB1FAB1E2D583B60000A189B /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = BB1FAB1D2D583B60000A189B /* SwiftSoup */; };
 		BB89ADD12D566FEE00037236 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BB89ADD02D566FEE00037236 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BB1FAB072D5825BD000A189B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB89ADA82D566D9A00037236 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB89ADAF2D566D9A00037236;
+			remoteInfo = Assessment;
+		};
 		BB89AE012D56942300037236 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB89ADA82D566D9A00037236 /* Project object */;
@@ -22,13 +31,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB1FAB012D5825BD000A189B /* AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssessmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1FAB102D583115000A189B /* Assessment.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Assessment.xctestplan; sourceTree = "<group>"; };
 		BB89ADB02D566D9A00037236 /* Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB89ADFD2D56942300037236 /* AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssessmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BB1FAB132D5836F3000A189B /* Exceptions for "Assessment" folder in "AssessmentTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Helpers/Helpers.swift,
+				Model/Model.swift,
+				View/ImageDetailsView.swift,
+				ViewModel/ContentViewModel.swift,
+			);
+			target = BB89ADFC2D56942200037236 /* AssessmentTests */;
+		};
+		BB1FAB142D5836F3000A189B /* Exceptions for "Assessment" folder in "AssessmentUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Helpers/Helpers.swift,
+				Model/Model.swift,
+				View/ImageDetailsView.swift,
+				ViewModel/ContentViewModel.swift,
+			);
+			target = BB1FAB002D5825BD000A189B /* AssessmentUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		BB1FAB022D5825BD000A189B /* AssessmentUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AssessmentUITests;
+			sourceTree = "<group>";
+		};
 		BB89ADB22D566D9A00037236 /* Assessment */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BB1FAB132D5836F3000A189B /* Exceptions for "Assessment" folder in "AssessmentTests" target */,
+				BB1FAB142D5836F3000A189B /* Exceptions for "Assessment" folder in "AssessmentUITests" target */,
+			);
 			path = Assessment;
 			sourceTree = "<group>";
 		};
@@ -40,6 +83,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB1FAAFE2D5825BD000A189B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1FAB1C2D583B5C000A189B /* Kingfisher in Frameworks */,
+				BB1FAB1E2D583B60000A189B /* SwiftSoup in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB89ADAD2D566D9A00037236 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,8 +121,10 @@
 		BB89ADA72D566D9A00037236 = {
 			isa = PBXGroup;
 			children = (
+				BB1FAB102D583115000A189B /* Assessment.xctestplan */,
 				BB89ADB22D566D9A00037236 /* Assessment */,
 				BB89ADFE2D56942300037236 /* AssessmentTests */,
+				BB1FAB022D5825BD000A189B /* AssessmentUITests */,
 				BB1FAAFA2D56DEAB000A189B /* Frameworks */,
 				BB89ADB12D566D9A00037236 /* Products */,
 			);
@@ -81,6 +135,7 @@
 			children = (
 				BB89ADB02D566D9A00037236 /* Assessment.app */,
 				BB89ADFD2D56942300037236 /* AssessmentTests.xctest */,
+				BB1FAB012D5825BD000A189B /* AssessmentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +143,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB1FAB002D5825BD000A189B /* AssessmentUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB1FAB092D5825BD000A189B /* Build configuration list for PBXNativeTarget "AssessmentUITests" */;
+			buildPhases = (
+				BB1FAAFD2D5825BD000A189B /* Sources */,
+				BB1FAAFE2D5825BD000A189B /* Frameworks */,
+				BB1FAAFF2D5825BD000A189B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB1FAB082D5825BD000A189B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BB1FAB022D5825BD000A189B /* AssessmentUITests */,
+			);
+			name = AssessmentUITests;
+			packageProductDependencies = (
+				BB1FAB1B2D583B5C000A189B /* Kingfisher */,
+				BB1FAB1D2D583B60000A189B /* SwiftSoup */,
+			);
+			productName = AssessmentUITests;
+			productReference = BB1FAB012D5825BD000A189B /* AssessmentUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BB89ADAF2D566D9A00037236 /* Assessment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB89ADBE2D566D9C00037236 /* Build configuration list for PBXNativeTarget "Assessment" */;
@@ -145,6 +225,10 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					BB1FAB002D5825BD000A189B = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = BB89ADAF2D566D9A00037236;
+					};
 					BB89ADAF2D566D9A00037236 = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -174,11 +258,19 @@
 			targets = (
 				BB89ADAF2D566D9A00037236 /* Assessment */,
 				BB89ADFC2D56942200037236 /* AssessmentTests */,
+				BB1FAB002D5825BD000A189B /* AssessmentUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB1FAAFF2D5825BD000A189B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB89ADAE2D566D9A00037236 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +288,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB1FAAFD2D5825BD000A189B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BB89ADAC2D566D9A00037236 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +312,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BB1FAB082D5825BD000A189B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB89ADAF2D566D9A00037236 /* Assessment */;
+			targetProxy = BB1FAB072D5825BD000A189B /* PBXContainerItemProxy */;
+		};
 		BB89AE022D56942300037236 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BB89ADAF2D566D9A00037236 /* Assessment */;
@@ -221,6 +325,40 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		BB1FAB0A2D5825BD000A189B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8JMM4RM96A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.indeks.AssessmentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Assessment;
+			};
+			name = Debug;
+		};
+		BB1FAB0B2D5825BD000A189B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8JMM4RM96A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.indeks.AssessmentUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Assessment;
+			};
+			name = Release;
+		};
 		BB89ADBC2D566D9C00037236 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +577,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB1FAB092D5825BD000A189B /* Build configuration list for PBXNativeTarget "AssessmentUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1FAB0A2D5825BD000A189B /* Debug */,
+				BB1FAB0B2D5825BD000A189B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BB89ADAB2D566D9A00037236 /* Build configuration list for PBXProject "Assessment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -489,6 +636,16 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		BB1FAAFB2D56DEAB000A189B /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC15F6A2D56DD1C00644EDC /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+		BB1FAB1B2D583B5C000A189B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB89ADCF2D566FEE00037236 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		BB1FAB1D2D583B60000A189B /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBC15F6A2D56DD1C00644EDC /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;

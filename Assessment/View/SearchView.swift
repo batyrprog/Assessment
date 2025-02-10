@@ -16,7 +16,6 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollView {
                     if let error = viewModel.error {
                         ContentUnavailableView("Error: \(error.localizedDescription)",
                                                systemImage: "photo.on.rectangle.angled")
@@ -28,7 +27,6 @@ struct SearchView: View {
                             GridView(viewModel: viewModel)
                         }
                     }
-                }
             }
             .searchable(text: $searchText)
             .navigationTitle("Flickr Search")

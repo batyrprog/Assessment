@@ -19,18 +19,23 @@ struct GridView: View {
     
     var body: some View {
         VStack {
-            LazyVGrid(columns: gridItems, spacing: 1) {
-                ForEach(viewModel.imageItems, id: \.self) { item in
-                    NavigationLink {
-                        ImageDetailsView(imageItem: item)
-                    } label: {
-                        GridCell(url: item.getImageUrl())
-                            .frame(width: cellSize(), height: cellSize())
-                            .clipShape(Rectangle())
-                            .clipped()
+            ScrollView {
+                LazyVGrid(columns: gridItems, spacing: 1) {
+                    ForEach(viewModel.imageItems, id: \.self) { item in
+                        NavigationLink {
+                            ImageDetailsView(imageItem: item)
+                        } label: {
+                            GridCell(url: item.getImageUrl())
+                                .frame(width: cellSize(), height: cellSize())
+                                .clipShape(Rectangle())
+                                .clipped()
+                        }
+                        .accessibilityIdentifier("gridCell_0")
                     }
                 }
+                .accessibilityIdentifier("collectionView")
             }
+            .accessibilityIdentifier("gridScrollView")
         }
     }
     

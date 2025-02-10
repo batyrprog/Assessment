@@ -22,9 +22,16 @@ class ViewModel: ObservableObject {
     }
     
     func fetchImages(_ searchText: String) async {
-        guard !searchText.isEmpty else {
-            return
-        }
+        
+//        if let image = Developer.getItem() {
+//            self.imageItems = [image]
+//        } else {
+//            
+//        }
+        
+//        guard !searchText.isEmpty else {
+//            return
+//        }
         
         guard didFetchImages == false else {
             return
@@ -53,11 +60,10 @@ enum BError: Error {
 class NetworkService {
     private init() { }
     static let shared = NetworkService()
-    
-    
+
     
     func fetchData(_ searchText: String) async throws -> ResponseModel {
-        let urlString = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=\(searchText)"
+        let urlString = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tags=aa"
         
         guard let url = URL(string: urlString) else {
             throw BError.invalidURL

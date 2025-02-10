@@ -27,8 +27,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:Assessment.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -38,6 +43,17 @@
                BlueprintIdentifier = "BB89ADFC2D56942200037236"
                BuildableName = "AssessmentTests.xctest"
                BlueprintName = "AssessmentTests"
+               ReferencedContainer = "container:Assessment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BB1FAB002D5825BD000A189B"
+               BuildableName = "AssessmentUITests.xctest"
+               BlueprintName = "AssessmentUITests"
                ReferencedContainer = "container:Assessment.xcodeproj">
             </BuildableReference>
          </TestableReference>
